@@ -1,0 +1,3 @@
+#!/bin/sh
+
+figlet $1 -t -f ~/.fonts/dosrebel.flf | lolcat
