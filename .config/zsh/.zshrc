@@ -87,6 +87,8 @@ autoload -U colors && colors
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man-pages colorize pip python zsh-navigation-tools zsh-autosuggestions)
 
+# remove annoying message at startup
+ZSH_DISABLE_COMPFIX="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $HOME/.config/zsh/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.config/zsh/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Use lsd instead of ls
 alias ls='lsd'

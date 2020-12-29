@@ -1,0 +1,14 @@
+# web browser
+cmd + alt - w : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --single-instance
+
+# Terminal
+cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# Open Ranger
+cmd + alt - r : /Applications/Alacritty.app/Contents/MacOS/alacritty -e ranger ~
+
+# Scripts to execute
+cmd + alt - p : /Users/vsvh/.config/scripts/script -single-instance
+
+# Toggle cam
+cmd + alt - c : /Users/vsvh/.config/scripts/ftwebcam
