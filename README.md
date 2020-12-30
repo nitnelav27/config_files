@@ -39,7 +39,6 @@ As an example, if I want to add my `i3` config file, localted in `~/.config/i3`
 
 ``` sh
 dots add ~/.config/i3/config
-dots commit -m "Adding i3 config"
+dots commit -a -m "Adding i3 config"
 dots push dots master
 ```
-
