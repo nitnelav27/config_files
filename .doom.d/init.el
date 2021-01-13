@@ -159,6 +159,7 @@
         +jupyter
         +pandoc
         +present
+        +roam
         +pretty)
         ;+roam)
        ;;php               ; perl's insecure younger brother

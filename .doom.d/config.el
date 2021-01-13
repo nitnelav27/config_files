@@ -94,6 +94,8 @@
 
 (setq org-pretty-entities t)
 
+(setq org-roam-directory "~/docs/OrgRoam")
+
 ;(use-package! elpy
 ;  :init (elpy-enable))
 ;(use-package! company

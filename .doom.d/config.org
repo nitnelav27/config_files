@@ -170,6 +170,11 @@ As the subsection title suggest
 #+begin_src emacs-lisp
 (setq org-pretty-entities t)
 #+end_src
+** Org-Roam
+This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
+#+begin_src emacs-lisp
+(setq org-roam-directory "~/docs/OrgRoam")
+#+end_src
 * Python
 Use Python as if this were a proper IDE.
 #+begin_src emacs-lisp
