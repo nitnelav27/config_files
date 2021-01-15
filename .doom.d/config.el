@@ -95,6 +95,11 @@
 (setq org-pretty-entities t)
 
 (setq org-roam-directory "~/docs/OrgRoam")
+(use-package! company-org-roam
+  :when (featurep! :completion company)
+  :after org-roam
+  :config
+  (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
 
 ;(use-package! elpy
 ;  :init (elpy-enable))
@@ -105,3 +110,18 @@
 ;  :after lsp-mode)
 ;(use-package! lsp-pyright
 ;  :after lsp-mode)
+
+(setq shell-file-name "/usr/bin/zsh"
+      eshell-aliases-file "~/.doom.d/aliases"
+      eshell-syntax-highlighting-global-mode t
+      eshell-visual-commands '("zsh" "ssh"))
+
+;(map! :leader
+;      (:prefix-map ("a" . "applications")
+;       (:prefix ("t" . "terminal emulators")
+;        :desc "open vterm" "t" #'vterm)
+;       )
+;      )
+(map! :leader
+      :desc "open a vterm"
+      "t t" #'vterm)

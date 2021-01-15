@@ -174,6 +174,11 @@ As the subsection title suggest
 This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
 #+begin_src emacs-lisp
 (setq org-roam-directory "~/docs/OrgRoam")
+(use-package! company-org-roam
+  :when (featurep! :completion company)
+  :after org-roam
+  :config
+  (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
 #+end_src
 * Python
 Use Python as if this were a proper IDE.
@@ -187,4 +192,26 @@ Use Python as if this were a proper IDE.
 ;  :after lsp-mode)
 ;(use-package! lsp-pyright
 ;  :after lsp-mode)
+#+end_src
+
+
+* Terminal emulator in Emacs
+This configuration applies to my eshell interpreter. My goal here is to remain in Emacs while I do something quick in my terminal.
+#+begin_src emacs-lisp
+(setq shell-file-name "/usr/bin/zsh"
+      eshell-aliases-file "~/.doom.d/aliases"
+      eshell-syntax-highlighting-global-mode t
+      eshell-visual-commands '("zsh" "ssh"))
+#+end_src
+UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usual terminal emulator
+#+begin_src emacs-lisp
+;(map! :leader
+;      (:prefix-map ("a" . "applications")
+;       (:prefix ("t" . "terminal emulators")
+;        :desc "open vterm" "t" #'vterm)
+;       )
+;      )
+(map! :leader
+      :desc "open a vterm"
+      "t t" #'vterm)
 #+end_src

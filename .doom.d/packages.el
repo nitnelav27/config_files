@@ -70,3 +70,7 @@
   :recipe (:host github :repo "jkitchin/org-ref"))
 (package! lsp-pyright)
 (package! elpy)
+(package! company-org-roam
+  :recipe (:host github :repo "jethrokuan/company-org-roam"))
+(package! helm
+  :recipe (:host github :repo "emacs-helm/helm"))
