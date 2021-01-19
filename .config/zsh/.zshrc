@@ -11,6 +11,7 @@ export PATH=$HOME/.config/scripts:$PATH
 export PATH=/opt/cuda/bin:$PATH
 export PATH=/opt/cuda/include:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/zsh/.oh-my-zsh

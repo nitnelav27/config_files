@@ -14,13 +14,11 @@ To start, my personal information
       user-mail-address "valentinvergara@gmail.com")
 #+end_src
 
-
 * Aesthetics
 As the section title suggest, everything that controls how Emacs looks like should be here.
 #+begin_src emacs-lisp
 (delete-selection-mode 1)
 #+end_src
-
 ** Start in fullscreen (only for mac)
 The idea is that whenever I start Emacs, it starts in fullscreen only if my OS is MacOs
 #+begin_src emacs-lisp
@@ -37,7 +35,7 @@ Insert an image instead of the ASCII art used by default
 ** Themes
 I will set a theme up, but also create a keybinding to easily change theme using =SPC H T=
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-peacock)
+(setq doom-theme 'doom-Iosvkem)
 (map! :leader
       :desc "Load a new theme"
       "h t" #'counsel-load-theme)
@@ -67,15 +65,21 @@ There are five different font settings in doom Emacs. Here is a brief descriptio
 * ORG mode
 The main reason to use Emacs.
 #+begin_src emacs-lisp
-(setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-                              "bibtex %b"
-                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
-        org-file-apps '((".pdf" . "zathura %s"))))
+        org-agenda-files '("~/.doom.d/agenda/agenda.org")
+        org-log-done 'time
+        org-file-apps '((".pdf" . "zathura %s"))
+        org-todo-keywords
+        '((sequence
+           "TODO(t)"
+           "READ(r)"
+           "TEACH(e)"
+           "MEETING(m)"
+           "|"
+           "DONE(d)"
+           ))))
 #+end_src
 
 ** Org-ref
@@ -84,7 +88,8 @@ To this date, this is the best way that I know to use references in any type of 
 (use-package! org-ref
   :after org
   :init
-  (setq org-ref-default-bibliography '("~/Dropbox/galactica.bib")))
+  (setq org-ref-default-bibliography '("~/references/master.bib")
+        org-ref-bibliography-notes "~/references/notes.org"))
         ;org-ref-completion-library 'org-ref-ivy-cite))
 
 (use-package! org-ref-bibtex
@@ -101,9 +106,15 @@ To this date, this is the best way that I know to use references in any type of 
 #+end_src
 Block ends here
 
-** LaTeX export: default packages
+** LaTeX export
 The first block of code defines the default packages for LaTeX export from org-mode.
 #+begin_src emacs-lisp
+(setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+                              "bibtex %b"
+                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
 (setq org-latex-default-packages-alist '(("utf8" "inputenc" t ("pdflatex"))
                                          ("" "graphicx" t)
                                          ("" "wrapfig" t)
@@ -173,13 +184,22 @@ As the subsection title suggest
 ** Org-Roam
 This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
 #+begin_src emacs-lisp
-(setq org-roam-directory "~/docs/OrgRoam")
+(setq org-roam-directory "~/references/roam")
 (use-package! company-org-roam
   :when (featurep! :completion company)
   :after org-roam
   :config
   (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
 #+end_src
+Taking things a bit further, I will configure =org-roam-bibtex= to be able to work with my references
+#+begin_src emacs-lisp
+(use-package! org-roam-bibtex
+  :after org-roam
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :custom
+  (orb-autokey-format "%a%y"))
+#+end_src
+
 * Python
 Use Python as if this were a proper IDE.
 #+begin_src emacs-lisp
@@ -194,23 +214,17 @@ Use Python as if this were a proper IDE.
 ;  :after lsp-mode)
 #+end_src
 
-
 * Terminal emulator in Emacs
 This configuration applies to my eshell interpreter. My goal here is to remain in Emacs while I do something quick in my terminal.
 #+begin_src emacs-lisp
 (setq shell-file-name "/usr/bin/zsh"
       eshell-aliases-file "~/.doom.d/aliases"
       eshell-syntax-highlighting-global-mode t
-      eshell-visual-commands '("zsh" "ssh"))
+      eshell-visual-commands '("zsh" "ssh")
+      vterm-max-scrollback 5000)
 #+end_src
 UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usual terminal emulator
 #+begin_src emacs-lisp
-;(map! :leader
-;      (:prefix-map ("a" . "applications")
-;       (:prefix ("t" . "terminal emulators")
-;        :desc "open vterm" "t" #'vterm)
-;       )
-;      )
 (map! :leader
       :desc "open a vterm"
       "t t" #'vterm)

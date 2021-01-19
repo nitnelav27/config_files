@@ -8,7 +8,7 @@
 
 (setq fancy-splash-image "~/.doom.d/smithers.png")
 
-(setq doom-theme 'doom-peacock)
+(setq doom-theme 'doom-Iosvkem)
 (map! :leader
       :desc "Load a new theme"
       "h t" #'counsel-load-theme)
@@ -25,20 +25,27 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic :weight bold))
 
-(setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-                              "bibtex %b"
-                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
-        org-file-apps '((".pdf" . "zathura %s"))))
+        org-agenda-files '("~/.doom.d/agenda/agenda.org")
+        org-log-done 'time
+        org-file-apps '((".pdf" . "zathura %s"))
+        org-todo-keywords
+        '((sequence
+           "TODO(t)"
+           "READ(r)"
+           "TEACH(e)"
+           "MEETING(m)"
+           "|"
+           "DONE(d)"
+           ))))
 
 (use-package! org-ref
   :after org
   :init
-  (setq org-ref-default-bibliography '("~/Dropbox/galactica.bib")))
+  (setq org-ref-default-bibliography '("~/references/master.bib")
+        org-ref-bibliography-notes "~/references/notes.org"))
         ;org-ref-completion-library 'org-ref-ivy-cite))
 
 (use-package! org-ref-bibtex
@@ -52,6 +59,12 @@
 
 (use-package! org-ref-isbn
   :after org)
+
+(setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+                              "bibtex %b"
+                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+                              "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
 
 (setq org-latex-default-packages-alist '(("utf8" "inputenc" t ("pdflatex"))
                                          ("" "graphicx" t)
@@ -94,12 +107,18 @@
 
 (setq org-pretty-entities t)
 
-(setq org-roam-directory "~/docs/OrgRoam")
+(setq org-roam-directory "~/references/roam")
 (use-package! company-org-roam
   :when (featurep! :completion company)
   :after org-roam
   :config
   (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
+
+(use-package! org-roam-bibtex
+  :after org-roam
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :custom
+  (orb-autokey-format "%a%y"))
 
 ;(use-package! elpy
 ;  :init (elpy-enable))
@@ -114,14 +133,9 @@
 (setq shell-file-name "/usr/bin/zsh"
       eshell-aliases-file "~/.doom.d/aliases"
       eshell-syntax-highlighting-global-mode t
-      eshell-visual-commands '("zsh" "ssh"))
+      eshell-visual-commands '("zsh" "ssh")
+      vterm-max-scrollback 5000)
 
-;(map! :leader
-;      (:prefix-map ("a" . "applications")
-;       (:prefix ("t" . "terminal emulators")
-;        :desc "open vterm" "t" #'vterm)
-;       )
-;      )
 (map! :leader
       :desc "open a vterm"
       "t t" #'vterm)
