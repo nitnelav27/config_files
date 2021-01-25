@@ -352,8 +352,8 @@ text.hinting_factor: 8  # Specifies the amount of softness for hinting in the
 ## Following are default face and edge colors, default tick sizes,
 ## default fontsizes for ticklabels, and so on.  See
 ## https://matplotlib.org/api/axes_api.html#module-matplotlib.axes
-axes.facecolor:     eeeeee   # axes background color
-axes.edgecolor:     bcbcbc   # axes edge color
+axes.facecolor:     ffffff   # axes background color
+axes.edgecolor:     ffffff   # axes edge color
 #axes.linewidth:     0.8     # edge linewidth
 axes.grid:          True   # display grid or not
 #axes.grid.axis:     both    # which axis the grid should apply to

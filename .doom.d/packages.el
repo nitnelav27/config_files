@@ -79,3 +79,5 @@
 (unpin! org-roam company-org-roam)
 (package! poet-theme
   :recipe (:host github :repo "kunalb/poet"))
+(package! beacon
+  :recipe (:host github :repo "Malabarba/beacon"))

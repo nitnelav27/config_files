@@ -25,6 +25,16 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic :weight bold))
 
+(use-package! beacon
+  :custom
+  (beacon-push-mark 10)
+  (beacon-color "#cc342b")
+  (beacon-blink-delay 0.3)
+  (beacon-blink-duration 0.3)
+  :config
+  (beacon-mode)
+  (global-hl-line-mode 1))
+
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
@@ -45,20 +55,23 @@
   :after org
   :init
   (setq org-ref-default-bibliography '("~/references/master.bib")
-        org-ref-bibliography-notes "~/references/notes.org"))
+        org-ref-bibliography-notes '("~/references/notes.org")
+        reftex-default-bibliography  '("~/references/master.bib")
+        bibtex-completion-bibliography '("~/references/master.bib")
+        reftex-bibpath-environment-variables '("~/references/master.bib")))
         ;org-ref-completion-library 'org-ref-ivy-cite))
 
 (use-package! org-ref-bibtex
-  :after org)
+  :after org-ref)
 
 (use-package! doi-utils
-  :after org)
+  :after org-ref)
 
 (use-package! org-ref-arxiv
-  :after org)
+  :after org-ref)
 
 (use-package! org-ref-isbn
-  :after org)
+  :after org-ref)
 
 (setq org-latex-pdf-process '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
                               "bibtex %b"
@@ -107,18 +120,25 @@
 
 (setq org-pretty-entities t)
 
-(setq org-roam-directory "~/references/roam")
-(use-package! company-org-roam
-  :when (featurep! :completion company)
-  :after org-roam
-  :config
-  (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
+(use-package! org-roam
+  :init
+  (setq org-roam-directory "~/references/roam"
+      org-roam-graph-executable "/usr/bin/dot"))
+
+(setq orb-insert-interface 'helm-bibtex
+        orb-insert-link-description 'citekey
+        orb-autokey-format "%A%y"
+        orb-templates
+        '(("r" "ref" plain (function org-roam--capture-get-point) ""
+           :file-name "${citekey}"
+           :head "#+TITLE: ${citekey}: ${title}\n#+ROAM_KEY: ${ref}\n#+ALIAS:\n"
+           :unnarrowed t)))
+
 
 (use-package! org-roam-bibtex
-  :after org-roam
+  :after (org-roam)
   :hook (org-roam-mode . org-roam-bibtex-mode)
-  :custom
-  (orb-autokey-format "%a%y"))
+  :requires bibtex-completion)
 
 ;(use-package! elpy
 ;  :init (elpy-enable))

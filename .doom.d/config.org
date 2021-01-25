@@ -61,6 +61,19 @@ There are five different font settings in doom Emacs. Here is a brief descriptio
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic :weight bold))
 #+end_src
+** Beacon
+This package just makes your cursor seem to highlight whenever it changes position. If I find find annoying, I will just comment the following block
+#+begin_src emacs-lisp
+(use-package! beacon
+  :custom
+  (beacon-push-mark 10)
+  (beacon-color "#cc342b")
+  (beacon-blink-delay 0.3)
+  (beacon-blink-duration 0.3)
+  :config
+  (beacon-mode)
+  (global-hl-line-mode 1))
+#+end_src
 
 * ORG mode
 The main reason to use Emacs.
@@ -89,20 +102,23 @@ To this date, this is the best way that I know to use references in any type of 
   :after org
   :init
   (setq org-ref-default-bibliography '("~/references/master.bib")
-        org-ref-bibliography-notes "~/references/notes.org"))
+        org-ref-bibliography-notes '("~/references/notes.org")
+        reftex-default-bibliography  '("~/references/master.bib")
+        bibtex-completion-bibliography '("~/references/master.bib")
+        reftex-bibpath-environment-variables '("~/references/master.bib")))
         ;org-ref-completion-library 'org-ref-ivy-cite))
 
 (use-package! org-ref-bibtex
-  :after org)
+  :after org-ref)
 
 (use-package! doi-utils
-  :after org)
+  :after org-ref)
 
 (use-package! org-ref-arxiv
-  :after org)
+  :after org-ref)
 
 (use-package! org-ref-isbn
-  :after org)
+  :after org-ref)
 #+end_src
 Block ends here
 
@@ -184,20 +200,28 @@ As the subsection title suggest
 ** Org-Roam
 This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
 #+begin_src emacs-lisp
-(setq org-roam-directory "~/references/roam")
-(use-package! company-org-roam
-  :when (featurep! :completion company)
-  :after org-roam
-  :config
-  (set-company-backend! 'org-mode '(company-org-roam company-yasnippet company-dabbrev)))
+(use-package! org-roam
+  :init
+  (setq org-roam-directory "~/references/roam"
+      org-roam-graph-executable "/usr/bin/dot"))
 #+end_src
 Taking things a bit further, I will configure =org-roam-bibtex= to be able to work with my references
 #+begin_src emacs-lisp
+(setq orb-insert-interface 'helm-bibtex
+        orb-insert-link-description 'citekey
+        orb-autokey-format "%A%y"
+        orb-templates
+        '(("r" "ref" plain (function org-roam--capture-get-point) ""
+           :file-name "${citekey}"
+           :head "#+TITLE: ${citekey}: ${title}\n#+ROAM_KEY: ${ref}\n#+ALIAS:\n"
+           :unnarrowed t)))
+
+
 (use-package! org-roam-bibtex
-  :after org-roam
+  :after (org-roam)
   :hook (org-roam-mode . org-roam-bibtex-mode)
-  :custom
-  (orb-autokey-format "%a%y"))
+  :requires bibtex-completion)
+
 #+end_src
 
 * Python
