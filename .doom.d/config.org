@@ -13,6 +13,14 @@ To start, my personal information
 (setq user-full-name "Valentin Vergara Hidd"
       user-mail-address "valentinvergara@gmail.com")
 #+end_src
+* Basic Settings
+In this block I will put every global setting to change some behavior that i don't quite like about plain Emacs
+#+begin_src emacs-lisp
+(setq evil-want-fine-undo t
+      auto-save-default t)
+
+(display-time 1)
+#+end_src
 
 * Aesthetics
 As the section title suggest, everything that controls how Emacs looks like should be here.

@@ -1,6 +1,11 @@
 (setq user-full-name "Valentin Vergara Hidd"
       user-mail-address "valentinvergara@gmail.com")
 
+(setq evil-want-fine-undo t
+      auto-save-default t)
+
+(display-time 1)
+
 (delete-selection-mode 1)
 
 (if (eq system-type 'darwin)
