@@ -61,6 +61,10 @@ There are five different font settings in doom Emacs. Here is a brief descriptio
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic :weight bold))
 #+end_src
+
+#+RESULTS:
+| doom--customize-themes-h-0 | doom--customize-themes-h-1006 |
+
 ** Beacon
 This package just makes your cursor seem to highlight whenever it changes position. If I find find annoying, I will just comment the following block
 #+begin_src emacs-lisp

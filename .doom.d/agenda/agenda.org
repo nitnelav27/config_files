@@ -8,7 +8,7 @@ This is my agenda file. It will be divided into sections, for every component of
 ** TODO Look in to =org-super-agenda= [0/2]
 - [ ] Look at the website
 - [ ] Small working example
-* My research [3/5]
+* My research [4/6]
 ** DONE Do some plots [3/3]
 CLOSED: [2021-01-19 Tue 02:41]
 - [X] Test how my global settings worked for matplotlib
@@ -23,14 +23,18 @@ All information is in my email. In the meantime, the first step is to write a dr
 ** READ Look for the basic papers needed to write the empirical results [0/2]
 - [ ] Papers about phone calls in general
 - [ ] Papers about communication in general
-** TODO Create a separate phone call dataframe from MIT
+** DONE Create a separate phone call dataframe from MIT
+CLOSED: [2021-01-29 Fri 02:26]
 The idea in this dataframe is that looking at the /first appeareance of egos/ plot, I can /guesstimate/ $d$ days to make an adjustment to the data. The maximum lifetime of any alter that appear on day $d$ will be $T - d$. Therefore, the maximum value I will consider for the new dataset will be exctly that, $T - d$.
-* Networks and Society [1/1]
+** TODO A new measurement
+It involves taking the sum of $f$ over all egos, then divide that number by $H(\lambda)$ and then divide by the number of egos to obtain $\langle b \rangle$ and possibly $\langle g \rangle$ (if I have enough time).
+* Networks and Society [1/2]
 ** DONE Do the reading list [2/3]
 CLOSED: [2021-01-25 Mon 04:19]
 - [X] Locate some papers and books
 - [X] Summarize them
 - [ ] Use =org-roam= to create notes about them.
+** TODO Structure the paper for Hilton Root
 * Teaching [7/10]
 ** DONE Lesson 1 [3/3]
 CLOSED: [2021-01-20 Wed 00:55]
@@ -70,16 +74,26 @@ CLOSED: [2021-01-21 Thu 20:10]
 CLOSED: [2021-01-21 Thu 14:33]
 - [X] Text to put in the /meet your instructors/ page
 - [X] Photo for the same
-** TODO Create solutions for Problem Sets [0/2]
-SCHEDULED: <2021-01-29 Fri 23:59>
-- [ ] Lesson 1
-** TODO Create Solutions for Colaboratory [/]
-SCHEDULED: <2021-01-27 Wed 23:59>
-- [ ] Lesson 1
+** TODO Create solutions for Problem Sets [2/5]
+SCHEDULED: <2021-02-05 Fri 23:59>
+- [X] Lesson 1
+- [X] Lesson 2
+- [ ] Lesson 3.1
+- [ ] Lesson 3.2
+- [ ] Lesson 3.3
+** TODO Create Solutions for Colaboratory [2/7]
+SCHEDULED: <2021-02-10 Wed 23:59>
+- [X] Lesson 1
+- [X] Lesson 2
+- [ ] Lesson 3.1
+- [ ] Lesson 3.2
+- [ ] Lesson 3.3
+- [ ] Lesson 4.1
+- [ ] Lesson 4.2
 * ABM Higher Education Chile [0/3]
 ** TODO The code for the model [0/2]
 SCHEDULED: <2021-01-25 Mon 19:00>
-- [ ] Student's decision make it explicit.
+- [ ] Student's decision make it explicit. [[file:../../references/roam/20210127194547-students_decision_process.org][abm-education student-decision-process]]
 - [ ] Make the University decision explicit.
 ** TODO Sidequest [/]
 - [ ] Composition of household income
