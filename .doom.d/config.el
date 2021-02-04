@@ -4,7 +4,7 @@
 (setq evil-want-fine-undo t
       auto-save-default t)
 
-(display-time 1)
+;(display-time 1)
 
 (delete-selection-mode 1)
 
@@ -18,9 +18,14 @@
       :desc "Load a new theme"
       "h t" #'counsel-load-theme)
 
-(setq doom-font (font-spec :family "Hasklig" :size 23)
+(if (eq system-type 'darwin)
+    (setq doom-font (font-spec :family "Hasklig" :size 20)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 20)
+      doom-big-font (font-spec :family "Hasklig" :size 30))
+    (setq doom-font (font-spec :family "Hasklig" :size 23)
       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 23)
       doom-big-font (font-spec :family "Hasklig" :size 35))
+    )
 
 (after! doom-themes
   (setq doom-themes-enable-bold t
