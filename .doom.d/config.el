@@ -48,7 +48,8 @@
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
-        org-agenda-files '("~/.doom.d/agenda/agenda.org")
+        org-agenda-files '(("~/.doom.d/agenda/agenda.org")
+                           ("~//doom.d/agenda/weekly.org"))
         org-log-done 'time
         org-file-apps '((".pdf" . "zathura %s"))
         org-todo-keywords
