@@ -33,11 +33,11 @@ The idea in this dataframe is that looking at the /first appeareance of egos/ pl
 ** DONE A new measurement
 CLOSED: [2021-02-05 Fri 02:41]
 It involves taking the sum of $f$ over all egos, then divide that number by $H(\lambda)$ and then divide by the number of egos to obtain $\langle b \rangle$ and possibly $\langle g \rangle$ (if I have enough time).
-** TODO Test for Dunbar's results [0/3]
+** TODO Test for Dunbar's results [3/3]
 The idea is that people tend to have a /layer 0/ of contacts with whom they communicate very frequently. Then comes layer 1 with about 4 or 5 people with a still high frequency of communication. In order to identify these two layers.
-- [ ] Produce $H(\lambda, \Delta\ell = 30)$ and get the number of alters in the higher values of $\lambda$
-- [ ] Take the average of the number in the previous point for all egos
-- [ ] Plot the results
+- [X] Produce $H(\lambda, \Delta\ell = 30)$ and get the number of alters in the higher values of $\lambda$
+- [X] Take the average of the number in the previous point for all egos
+- [X] Plot the results
 * Networks and Society [1/2]
 ** DONE Do the reading list [2/3]
 CLOSED: [2021-01-25 Mon 04:19]
@@ -54,12 +54,12 @@ CLOSED: [2021-01-20 Wed 00:55]
 - [X] Remove everything unnecessary from Python tools
 - [X] Same thing for math tools
 - [X] Redo the slides
-** TODO Edit files for lessons Spring 2021 [3/7]
+** TODO Edit files for lessons Spring 2021 [5/7]
 - [X] Lesson 0
 - [X] Lesson 2
 - [X] Lesson 3
-- [ ] Lesson 4
-- [ ] Lesson 5
+- [X] Lesson 4
+- [X] Lesson 5
 - [ ] Lesson 6
 - [ ] Lesson 7
 ** DONE Select which videos to keep and which ones to edit
@@ -87,22 +87,28 @@ CLOSED: [2021-01-21 Thu 20:10]
 CLOSED: [2021-01-21 Thu 14:33]
 - [X] Text to put in the /meet your instructors/ page
 - [X] Photo for the same
-** TODO Create solutions for Problem Sets [3/5]
+** TODO Create solutions for Problem Sets [4/9]
 SCHEDULED: <2021-02-05 Fri 23:59>
 - [X] Lesson 1
 - [X] Lesson 2
 - [X] Lesson 3.1
-- [ ] Lesson 3.2
-- [ ] Lesson 3.3
-** TODO Create Solutions for Colaboratory [2/7]
-SCHEDULED: <2021-02-10 Wed 23:59>
-- [X] Lesson 1
-- [X] Lesson 2
-- [ ] Lesson 3.1
-- [ ] Lesson 3.2
+- [X] Lesson 3.2
 - [ ] Lesson 3.3
 - [ ] Lesson 4.1
 - [ ] Lesson 4.2
+- [ ] Lesson 5.1
+- [ ] Lesson 5.2
+** TODO Create Solutions for Colaboratory [5/9]
+SCHEDULED: <2021-02-10 Wed 23:59>
+- [X] Lesson 1
+- [X] Lesson 2
+- [X] Lesson 3.1
+- [X] Lesson 3.2
+- [X] Lesson 3.3
+- [ ] Lesson 4.1
+- [ ] Lesson 4.2
+- [ ] Lesson 5.1
+- [ ] Lesson 5.2
 ** DONE Read slide set 7.1
 CLOSED: [2021-02-05 Fri 02:40]
 Check if it is too long
