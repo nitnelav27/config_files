@@ -82,3 +82,4 @@
 (package! beacon
   :recipe (:host github :repo "Malabarba/beacon"))
 (package! rainbow-mode)
+(package! exec-path-from-shell)

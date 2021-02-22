@@ -109,6 +109,12 @@
                                  ("" "subcaption")
                                  ("" "mdframed")))
 
+(use-package exec-path-from-shell
+     :init
+     (setq exec-path-from-shell-check-startup-files nil)
+     (if (eq system-type 'darwin)
+	 (exec-path-from-shell-initialize)))
+
 (setq org-latex-listings 'listings
       org-latex-listings-options
       '(("frame" "single")
