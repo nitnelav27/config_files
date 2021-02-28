@@ -29,6 +29,7 @@ Plugin 'jreybert/vimagit'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'ap/vim-css-color'                           " Color previews for CSS
 Plugin 'tpope/vim-surround'                         " Change surrounding marks
+Plugin 'junegunn/vim-emoji'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

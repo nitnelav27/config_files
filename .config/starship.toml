@@ -1,0 +1,89 @@
+# Prevent from creating a new line at start
+add_newline = false 
+
+# Prompt only uses one line
+[line_break]
+disabled = false
+
+# copied configuration starts here
+# source: https://gist.github.com/ryo-ARAKI/48a11585299f9032fa4bda60c9bba593
+
+[character]
+error_symbol = "[\u2717](bold red) "
+success_symbol = "[\u2c96](bold green) "
+
+[cmd_duration]
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
+
+[directory]
+truncation_length = 5
+truncation_symbol = "\u2026/"
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+always_show_remote = true
+format = " [$symbol$branch ]($style) "
+
+[git_commit]
+commit_hash_length = 8
+
+[git_state]
+progress_divider = " of "
+
+[git_status]
+conflicted = "\u2694 "
+ahead = "\U0001F3CE \U0001F4A8 \u2715${count}"
+behind = "\U0001F422 \u2715${count}"
+diverged = "\U0001D531 \U0001F3CE \U0001F4A8 \u2715${ahead_count} \U0001F422 \u2715${behind_count}"
+untracked = "\U0001F6E4  \u2715${count}"
+stashed = "\U0001F4E6 "
+modified = "\U0001F4DD \u2715${count}"
+staged = "\U0001F5C3  \u2715${count}"
+renamed = "\U0001F4DB \u2715${count}"
+deleted = "\U0001F5D1  \u2715${count}"
+format = "$all_status$ahead_behind"
+
+[hostname]
+ssh_only = true
+format = "[$hostname]($style)"
+trim_at = ".local"
+style = "bold dimmed white"
+disabled = false
+
+[julia]
+format = "[$symbol$version]($style) "
+symbol = "? "
+style = "bold green"
+disabled = true
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+show_percentage = true
+show_swap = true
+threshold = 70
+style = "bold dimmed white"
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+format = "[$symbol$version]($style) "
+style = "bold white"
+disabled = true
+
+[rust]
+format = "[$symbol$version]($style) "
+style = "bold green"
+disabled = true
+
+[time]
+time_format = "%T"
+format = "?? $time($style) "
+style = "bright-white"
+disabled = true
+
+[username]
+style_user = "bold #00909e"
+show_always = true
