@@ -1,0 +1,4 @@
+#!/bin/bash
+
+alias pacman='sudo pacman'
+alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
