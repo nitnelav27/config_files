@@ -38,7 +38,7 @@ The idea is that people tend to have a /layer 0/ of contacts with whom they comm
 - [X] Produce $H(\lambda, \Delta\ell = 30)$ and get the number of alters in the higher values of $\lambda$
 - [X] Take the average of the number in the previous point for all egos
 - [X] Plot the results
-* Networks and Society [1/4]
+* Networks and Society [2/6]
 ** DONE Do the reading list [2/3]
 CLOSED: [2021-01-25 Mon 04:19]
 - [X] Locate some papers and books
@@ -48,8 +48,15 @@ CLOSED: [2021-01-25 Mon 04:19]
 - [ ] Read the paper and make some notes
 - [ ] Read the notes and create an outline for a paper based on this
 - [ ] Evaluate to include simulations for some networks
-** TODO Draft for the invitation to the seminar
+** DONE Draft for the invitation to the seminar
+CLOSED: [2021-02-22 Mon 19:41]
 ** TODO Update email list for the potential invitees
+** TODO List for books to buy
++ Yuhua (one of the invitees)
++ Santo Fortunato
++ Newman
++ Network flows?
+** TODO Find out about how to embedd content on the website and only allow people with password to access it
 * Teaching [8/11]
 ** DONE Lesson 1 [3/3]
 CLOSED: [2021-01-20 Wed 00:55]
@@ -125,11 +132,13 @@ SCHEDULED: <2021-01-25 Mon 19:00>
 ** TODO Paper [0/1]
 SCHEDULED: <2021-02-28 Sun 23:59>
 - [ ] [[file:../../references/roam/20210121183521-structure_for_chilean_abm.org][Structure of the paper]]
-* Personal Stuff [2/5]
+* Personal Stuff [4/5]
 ** DONE Call Dressler Ophtalmologist to reschedule
 CLOSED: [2021-01-21 Thu 14:33] SCHEDULED: <2021-01-19 Tue 12:00>
 ** DONE Call to recover my T-mobile phone number
 CLOSED: [2021-01-25 Mon 13:25]
-** TODO Update health insurance information
-** TODO Call CVS to get meds
+** DONE Update health insurance information
+CLOSED: [2021-02-22 Mon 23:35]
+** DONE Call CVS to get meds
+CLOSED: [2021-02-22 Mon 23:35]
 ** TODO make appointment to endocrinologist

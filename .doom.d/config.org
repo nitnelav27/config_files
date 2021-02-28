@@ -174,14 +174,6 @@ And this block of code loads some packages for every document exported to LaTeX
                                  ("" "subcaption")
                                  ("" "mdframed")))
 #+end_src
-I need the next block only in MacOs, to be able to use the export directly to pdf.
-#+begin_src emacs-lisp
-(use-package exec-path-from-shell
-     :init
-     (setq exec-path-from-shell-check-startup-files nil)
-     (if (eq system-type 'darwin)
-	 (exec-path-from-shell-initialize)))
-#+end_src
 ** Listings in org
 By default, I will use the listings style for the class I'm teaching at GMU. It uses =listings= for syntax highlighting. In case I need to use the =minted= package with my defined style, I will uncomment the source code block below.
 #+begin_src emacs-lisp
