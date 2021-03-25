@@ -275,3 +275,8 @@ UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usu
       :desc "open a vterm"
       "t t" #'vterm)
 #+end_src
+
+* Email in Emacs
+This is my email configuration in Emacs. For now, it will work for two accounts: GMU and gmail. I took most of it from [[https://gitlab.com/dwt1/dotfiles/-/tree/master][Distrotube's dot files.]]
+#+begin_src emacs-lisp
+#+end_src

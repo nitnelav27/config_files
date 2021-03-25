@@ -170,3 +170,5 @@
 (map! :leader
       :desc "open a vterm"
       "t t" #'vterm)
+
+

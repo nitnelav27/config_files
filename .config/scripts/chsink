@@ -26,7 +26,7 @@ do
 done
 
 
-choice=$(printf "%s\n" "${menu[@]}" | dmenu -p "Select the new sound source")
+choice=$(printf "%s\n" "${menu[@]}" | dmenu -fn "Fira Sans" -p "Select the new sound source")
 echo $newsink
 
 case $choice in
