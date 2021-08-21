@@ -134,7 +134,8 @@
 (use-package! org-roam
   :init
   (setq org-roam-directory "~/references/roam"
-      org-roam-graph-executable "/usr/bin/dot"))
+      org-roam-graph-executable "/usr/bin/dot")
+      )
 
 (setq orb-insert-interface 'helm-bibtex
         orb-insert-link-description 'citekey
@@ -170,5 +171,3 @@
 (map! :leader
       :desc "open a vterm"
       "t t" #'vterm)
-
-

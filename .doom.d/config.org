@@ -217,13 +217,15 @@ As the subsection title suggest
 #+begin_src emacs-lisp
 (setq org-pretty-entities t)
 #+end_src
+
 ** Org-Roam
 This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
 #+begin_src emacs-lisp
 (use-package! org-roam
   :init
   (setq org-roam-directory "~/references/roam"
-      org-roam-graph-executable "/usr/bin/dot"))
+      org-roam-graph-executable "/usr/bin/dot")
+      )
 #+end_src
 Taking things a bit further, I will configure =org-roam-bibtex= to be able to work with my references
 #+begin_src emacs-lisp
@@ -243,8 +245,6 @@ Taking things a bit further, I will configure =org-roam-bibtex= to be able to wo
   :requires bibtex-completion)
 
 #+end_src
-
-#+RESULTS:
 
 * Python
 Use Python as if this were a proper IDE.
@@ -276,7 +276,3 @@ UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usu
       "t t" #'vterm)
 #+end_src
 
-* Email in Emacs
-This is my email configuration in Emacs. For now, it will work for two accounts: GMU and gmail. I took most of it from [[https://gitlab.com/dwt1/dotfiles/-/tree/master][Distrotube's dot files.]]
-#+begin_src emacs-lisp
-#+end_src
