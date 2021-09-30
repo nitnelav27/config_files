@@ -30,6 +30,7 @@ Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'ap/vim-css-color'                           " Color previews for CSS
 Plugin 'tpope/vim-surround'                         " Change surrounding marks
 Plugin 'junegunn/vim-emoji'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +67,8 @@ set noswapfile
 set cursorline
 set cursorcolumn
 set mouse=nicr  " Mouse scrolling
+set background=dark
+colorscheme PaperColor
 
 
 "call plug#begin('~/.config/nvim/plugged')
