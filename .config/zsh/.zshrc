@@ -68,7 +68,12 @@ source $ZDOTDIR/plugins/colorize.plugin.zsh
 source $ZDOTDIR/plugins/git.plugin.zsh
 source $ZDOTDIR/plugins/zsh-autosuggestions.zsh
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fi
 
 # Starship prompt
 eval "$(starship init zsh)"
