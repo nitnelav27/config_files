@@ -6,6 +6,11 @@ export PATH=/opt/cuda/include:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	export PATH=/opt/homebrew/opt/python@3.10/bin:$PATH
+	export PATH=/opt/homebrew/bin:$PATH
+fi
+
 # Enable colors
 autoload -U colors && colors
 
@@ -27,7 +32,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/vsvh/.config/zsh/.zshrc'
+#zstyle :compinstall filename '/Users/vsvh/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -69,7 +74,7 @@ source $ZDOTDIR/plugins/git.plugin.zsh
 source $ZDOTDIR/plugins/zsh-autosuggestions.zsh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 else
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

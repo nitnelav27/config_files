@@ -1,14 +1,17 @@
 # web browser
-cmd + alt - w : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --single-instance
+cmd + alt - w : /Applications/Safari.app/Contents/MacOS/Safari --single-instance
 
 # Terminal
-cmd + alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+cmd + alt - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 
 # Open Ranger
-cmd + alt - r : /Applications/Alacritty.app/Contents/MacOS/alacritty -e ranger ~
+cmd + alt - r : /Applications/iTerm.app/Contents/MacOS/iTerm2 -e ranger ~
 
 # Scripts to execute
 cmd + alt - p : /Users/vsvh/.config/scripts/script -single-instance
 
 # Toggle cam
 cmd + alt - c : /Users/vsvh/.config/scripts/ftwebcam
+
+# Emacs
+cmd + alt - e: /opt/homebrew/bin/emacsclient -n -c -a ''
