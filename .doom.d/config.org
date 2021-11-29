@@ -172,7 +172,8 @@ And this block of code loads some packages for every document exported to LaTeX
                                  ("" "ragged2e")
                                  ("" "tabularx")
                                  ("" "subcaption")
-                                 ("" "mdframed")))
+                                 ("" "mdframed"))
+      )
 #+end_src
 ** Listings in org
 By default, I will use the listings style for the class I'm teaching at GMU. It uses =listings= for syntax highlighting. In case I need to use the =minted= package with my defined style, I will uncomment the source code block below.
@@ -222,6 +223,7 @@ As the subsection title suggest
 This is an org-mode implementation of the Zettelkasten Method (Luhmann). For now (Jan, 2021), I'm testing it for academic work.
 #+begin_src emacs-lisp
 (use-package! org-roam
+  :if (eq system-type 'darwin)
   :init
   (setq org-roam-directory "~/references/roam"
       org-roam-graph-executable "/usr/bin/dot")
@@ -263,11 +265,13 @@ Use Python as if this were a proper IDE.
 * Terminal emulator in Emacs
 This configuration applies to my eshell interpreter. My goal here is to remain in Emacs while I do something quick in my terminal.
 #+begin_src emacs-lisp
-(setq shell-file-name "/usr/bin/zsh"
+(if (eq system-type 'gnu/linux)
+    (setq shell-file-name "/usr/bin/zsh"
       eshell-aliases-file "~/.doom.d/aliases"
       eshell-syntax-highlighting-global-mode t
       eshell-visual-commands '("zsh" "ssh")
       vterm-max-scrollback 5000)
+    )
 #+end_src
 UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usual terminal emulator
 #+begin_src emacs-lisp

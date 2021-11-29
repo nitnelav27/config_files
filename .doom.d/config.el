@@ -107,7 +107,8 @@
                                  ("" "ragged2e")
                                  ("" "tabularx")
                                  ("" "subcaption")
-                                 ("" "mdframed")))
+                                 ("" "mdframed"))
+      )
 
 (setq org-latex-listings 'listings
       org-latex-listings-options
@@ -132,6 +133,7 @@
 (setq org-pretty-entities t)
 
 (use-package! org-roam
+  :if (eq system-type 'darwin)
   :init
   (setq org-roam-directory "~/references/roam"
       org-roam-graph-executable "/usr/bin/dot")
@@ -162,11 +164,13 @@
 ;(use-package! lsp-pyright
 ;  :after lsp-mode)
 
-(setq shell-file-name "/usr/bin/zsh"
+(if (eq system-type 'gnu/linux)
+    (setq shell-file-name "/usr/bin/zsh"
       eshell-aliases-file "~/.doom.d/aliases"
       eshell-syntax-highlighting-global-mode t
       eshell-visual-commands '("zsh" "ssh")
       vterm-max-scrollback 5000)
+    )
 
 (map! :leader
       :desc "open a vterm"

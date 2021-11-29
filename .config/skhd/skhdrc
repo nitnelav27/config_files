@@ -1,5 +1,5 @@
 # web browser
-cmd + alt - w : /Applications/Safari.app/Contents/MacOS/Safari --single-instance
+cmd + alt - w : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --single-instance
 
 # Terminal
 cmd + alt - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
