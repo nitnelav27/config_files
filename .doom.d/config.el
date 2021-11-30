@@ -51,7 +51,6 @@
         org-agenda-files '(("~/.doom.d/agenda/agenda.org")
                            ("~//doom.d/agenda/weekly.org"))
         org-log-done 'time
-        org-file-apps '((".pdf" . "zathura %s"))
         org-todo-keywords
         '((sequence
            "TODO(t)"
@@ -61,6 +60,10 @@
            "|"
            "DONE(d)"
            ))))
+
+(if (eq system-type 'gnu/linux)
+    (after! org
+      (setq org-file-apps '((".pdf" . "zathura %s")))))
 
 (use-package! org-ref
   :after org
