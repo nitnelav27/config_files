@@ -6,6 +6,10 @@
 
 ;(display-time 1)
 
+(if (eq system-type 'darwin)
+    (setq +latex-viewers '(pdf-tools))
+  )
+
 (delete-selection-mode 1)
 
 (if (eq system-type 'darwin)
@@ -45,6 +49,18 @@
   (beacon-mode)
   (global-hl-line-mode 1))
 
+(plist-put!  +ligatures-extra-symbols
+             :int       "nil"
+             :float     "nil"
+             :in        "nil"
+             :for       "nil"
+             :not       "nil"
+             :and       "nil"
+             :or        "nil"
+             :return    "nil"
+             :yield     "nil"
+             )
+
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
@@ -64,6 +80,9 @@
 (if (eq system-type 'gnu/linux)
     (after! org
       (setq org-file-apps '((".pdf" . "zathura %s")))))
+(if (eq system-type 'darwin)
+    (after! org
+      (setq org-file-apps '((".pdf" . "Preview.app %o")))))
 
 (use-package! org-ref
   :after org

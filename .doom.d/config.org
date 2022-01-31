@@ -24,7 +24,13 @@ In this block I will put every global setting to change some behavior that i don
 
 #+RESULTS:
 : t
-
+* PDF Viewer
+This will only be used in MacOs
+#+begin_src emacs-lisp
+(if (eq system-type 'darwin)
+    (setq +latex-viewers '(pdf-tools))
+  )
+#+end_src
 * Aesthetics
 As the section title suggest, everything that controls how Emacs looks like should be here.
 #+begin_src emacs-lisp
@@ -95,6 +101,20 @@ This package just makes your cursor seem to highlight whenever it changes positi
   (global-hl-line-mode 1))
 #+end_src
 
+** Let's forget about /some/ ligatures
+#+begin_src emacs-lisp
+(plist-put!  +ligatures-extra-symbols
+             :int       "nil"
+             :float     "nil"
+             :in        "nil"
+             :for       "nil"
+             :not       "nil"
+             :and       "nil"
+             :or        "nil"
+             :return    "nil"
+             :yield     "nil"
+             )
+#+end_src
 * ORG mode
 The main reason to use Emacs.
 #+begin_src emacs-lisp
@@ -117,6 +137,9 @@ The main reason to use Emacs.
 (if (eq system-type 'gnu/linux)
     (after! org
       (setq org-file-apps '((".pdf" . "zathura %s")))))
+(if (eq system-type 'darwin)
+    (after! org
+      (setq org-file-apps '((".pdf" . "Preview.app %o")))))
 #+end_src
 
 ** Org-ref
