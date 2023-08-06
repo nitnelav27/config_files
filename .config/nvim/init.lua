@@ -1,0 +1,8 @@
+require("vsvh.plugins-setup")
+require("vsvh.core.options")
+require("vsvh.core.keymaps")
+require("vsvh.core.colorscheme")
+require("vsvh.plugins.nvim-cmp")
+require("vsvh.plugins.autopairs")
+require("vsvh.plugins.lualine")
+require("vsvh.plugins.colorizer")

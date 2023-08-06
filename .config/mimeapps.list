@@ -1,0 +1,23 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-9ZVJ51.desktop
+message/rfc822=userapp-Thunderbird-9ZVJ51.desktop
+x-scheme-handler/mid=userapp-Thunderbird-9ZVJ51.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-7EQL51.desktop
+text/calendar=userapp-Thunderbird-7EQL51.desktop
+application/x-extension-ics=userapp-Thunderbird-7EQL51.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-7EQL51.desktop
+application/pdf=zathura.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-QBQ6U1.desktop;userapp-Thunderbird-9ZVJ51.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-QBQ6U1.desktop;userapp-Thunderbird-9ZVJ51.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-W0KAV1.desktop;userapp-Thunderbird-7EQL51.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-W0KAV1.desktop;userapp-Thunderbird-7EQL51.desktop;
+text/plain=libreoffice-writer.desktop;nvim.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
