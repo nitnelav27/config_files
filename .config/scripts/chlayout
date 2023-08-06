@@ -1,5 +1,0 @@
-#!/bin/sh
-
-fetchly=$(setxkbmap -query | grep layout | awk {'print $2'})
-
-([[ $fetchly = "us" ]] && setxkbmap es) || setxkbmap us
