@@ -6,6 +6,10 @@
 
 ;(display-time 1)
 
+(map! :leader
+      :desc "Find files the usual way"
+      :g "b" #'ivy-switch-buffer)
+
 (if (eq system-type 'darwin)
     (setq +latex-viewers '(pdf-tools))
   )

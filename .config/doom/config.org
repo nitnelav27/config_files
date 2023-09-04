@@ -21,6 +21,12 @@ In this block I will put every global setting to change some behavior that i don
 
 ;(display-time 1)
 #+end_src
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Find files the usual way"
+      :g "b" #'ivy-switch-buffer)
+#+end_src
 * PDF Viewer
 This will only be used in MacOs
 #+begin_src emacs-lisp
@@ -303,4 +309,3 @@ UPDATE: I think for now I will stick to =vterm=, which looks exactly like my usu
       :desc "open a vterm"
       "t t" #'vterm)
 #+end_src
-

@@ -8,4 +8,4 @@
 
 #pkill ffplay || ffplay -f video4linux2 -framerate 30  -y $wh -top $wt -left $wl -noborder -an -sn  -i /dev/video0
 
-pkill ffplay || ffplay -f video4linux2 -framerate 30 -noborder -an -sn -x 720 -y 450 -top 920  -left 2200 -i /dev/video0
+pkill ffplay || ffplay -f video4linux2 -framerate 30 -noborder -an -sn -x 500 -y 350 -top 1000  -left 2450 -i /dev/video0

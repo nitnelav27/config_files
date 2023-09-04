@@ -56,6 +56,7 @@
 (package! yasnippet)
 (package! auto-yasnippet)
 (package! doom-snippets)
+(package! ivy)
 (package! org-ref
   :recipe (:host github :repo "jkitchin/org-ref"))
 (package! doi-utils
