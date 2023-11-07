@@ -1,3 +1,6 @@
 alias dots='/usr/bin/git --git-dir=$HOME/.config/dots/ --work-tree=$HOME'
-alias l='exa --icons'
+alias l='eza --icons'
 alias wget='wget --no-hsts'
+alias resenv='~/docs/GMU/research/pyres/bin/activate'
+alias jupenv='~/docs/GMU/research/pyres/bin/jupyter'
+alias pipenv='~/docs/GMU/research/pyres/bin/pip'

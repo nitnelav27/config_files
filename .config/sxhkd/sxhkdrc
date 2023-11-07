@@ -6,7 +6,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show drun -show-icons
 
 # launch emacs
 super + e
@@ -15,6 +15,10 @@ super + e
 # launch Chrome
 super + w
 	google-chrome-stable
+
+# Record Screen
+super + shift + s
+	scasttoggle
 
 # make sxhkd reload its configuration files:
 super + Escape

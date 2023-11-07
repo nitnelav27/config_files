@@ -9,7 +9,6 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
-export MPL
 
 # Default Apps
 export EDITOR="nvim"
