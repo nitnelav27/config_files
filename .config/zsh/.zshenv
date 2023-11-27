@@ -20,3 +20,7 @@ export IMAGE="feh"
 export OPENER="xdg-open"
 export PAGER="less"
 export WM="bspwm"
+
+# NAS directory storage
+export NASDATA="/nas/data"
+export NASRES="/nas/plots"

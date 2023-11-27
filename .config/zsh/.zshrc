@@ -8,12 +8,6 @@ export MANPATH="/usr/share/man:/usr/man"
 export MANPATH=/usr/local/texlive/2023/texmf-dist/doc/man/:$MANPATH
 #export INFODIR=/usr/local/texlive/2023/texmf-dist/doc/info
 
-# PATH modification for MacOS only
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	export PATH=/opt/homebrew/opt/python@3.10/bin:$PATH
-	export PATH=/opt/homebrew/bin:$PATH
-fi
-
 # Enable colors
 autoload -U colors && colors
 
@@ -74,13 +68,8 @@ cursor_mode
 source $ZDOTDIR/plugins/colored-man-pages.plugin.zsh
 source $ZDOTDIR/plugins/colorize.plugin.zsh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-else
-	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-fi
 
 # Starship prompt
 eval "$(starship init zsh)"
