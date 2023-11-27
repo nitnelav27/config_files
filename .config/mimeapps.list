@@ -13,6 +13,7 @@ application/x-extension-ics=userapp-Thunderbird-7EQL51.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-7EQL51.desktop
 application/pdf=zathura.desktop
 x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/tel=google-chrome.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-QBQ6U1.desktop;userapp-Thunderbird-9ZVJ51.desktop;
